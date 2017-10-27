@@ -1,0 +1,114 @@
+body {
+    background: rgba(52, 164, 234, 0.356);
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 0;
+}
+
+h2 {
+    font-weight: 700;
+    display: inline;
+    color: #00599D;
+}
+
+h3 {
+    color: #00599D;
+}
+
+.btnGroup {
+    width: 100%;
+    display: block;
+}
+
+.btnGroup button {
+    background: #008CE2;
+    border: none;
+    border-right: solid 2px rgba(137, 196, 233, 0.356);
+    float: left;
+    width: 20%;
+    padding: 10px 0;
+    color: white;
+    font-size: 1.2em;
+}
+
+.btnGroup button:last-of-type {
+    border-right: none;
+}
+
+button:hover{
+    background: rgba(52, 164, 234, 0.356);
+    color: #00599D;
+    cursor: pointer;
+}
+
+.container {
+    background: white;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+#banner {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+#content {
+    width: 80%;
+    margin: 0;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 0 50px 50px;
+    
+}
+
+
+#assoc {
+    float: left;
+    width: 20%;    
+}
+
+ul {
+    text-align: center;
+    list-style-type: none;
+}
+
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+}
+
+@media(max-width: 767px) {
+    #content {
+        width: 100%;
+    }
+
+    #assoc {
+        width: 100%;
+    }
+    
+    #assoc li{
+        display: inline;
+        padding: 20px;
+    }
+
+    
+
+    .btnGroup {
+
+    }
+}
