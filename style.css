@@ -1,7 +1,13 @@
 body {
-    background: rgba(52, 164, 234, 0.356);
+    background: #005D9E;
     font-family: 'Open Sans', sans-serif;
     margin-top: 0;
+}
+
+h1{
+    font-weight: 700;
+    display: inline;
+    color: #00599D;
 }
 
 h2 {
@@ -14,6 +20,7 @@ h3 {
     color: #00599D;
 }
 
+
 /* Add a blue background color to the top navigation */
 .topnav {
     background-color: #008CE3;
@@ -21,15 +28,21 @@ h3 {
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
+.topnav a, .topnav div {
     float: left;
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 10px 0;
     text-decoration: none;
     width: 20%;
 }
+
+.topnav a {    
+    padding: 10px 0;
+}
+
+
+
 
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -41,6 +54,36 @@ h3 {
 .topnav .icon {
     display: none;
 }
+
+/* dropdown in navbar */
+.topnav .dropdown a {
+    padding: 10px 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.topnav .dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #008CE3;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 0;
+    z-index: 1;
+    width: 15.4%;
+    margin-top: 42px;
+}
+
+
+
+.topnav .dropdown .dropdown-content a {
+    width: 100%;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 
 .container {
@@ -66,7 +109,6 @@ h3 {
     
 }
 
-
 #assoc {
     float: left;
     width: 20%;    
@@ -76,6 +118,42 @@ ul {
     text-align: center;
     list-style-type: none;
 }
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea, input[type=email], input[type=number] {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #02599C;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #8CD0F8;
+    color: #00599D;
+}
+
+/* Add a background color and some padding around the form */
+.formContainer {
+    border-radius: 5px;
+    background-color: rgba(50, 162, 232, 0.164);
+    padding: 20px;
+}
+
 
 @media (min-width: 768px) {
     .container {
@@ -95,7 +173,7 @@ ul {
     }
 }
 
-@media(max-width: 767px) {
+@media(max-width: 991px) {
     #content {
         width: 100%;
     }
@@ -113,11 +191,22 @@ ul {
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 700px) {
-    .topnav a:not(:first-child) {display: none;}
+    .topnav a:not(:first-child), .topnav .dropdown {
+        display: none;
+    }
     .topnav a.icon {
       float: right;
       display: block;
     }
+
+    #content {
+        padding-left: 10px;
+    }
+
+    .topnav a:not(:last-child) {
+        width: 80%;    
+    }
+    
   } 
   
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
@@ -131,6 +220,18 @@ ul {
     .topnav.responsive a {
       float: none;
       display: block;
+      box-sizing: border-box;
       text-align: left;
+      padding-left: 10px;
+    }
+
+    .topnav.responsive .dropdown {
+        float: none;
+        display: block;
+        box-sizing: border-box;
+        text-align: left;
+        width: 80%;
     }
   }
+
+  /* work out how to get find us showing constantly */
